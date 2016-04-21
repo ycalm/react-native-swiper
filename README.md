@@ -1,2 +1,3 @@
 # react-native-swiper
-The Swiper component for React Native. (update of https://github.com/leecade/react-native-swiper, fixed some problems and remove buttons)
+The Swiper component for React Native. (base of https://github.com/leecade/react-native-swiper,
+fixes some problems and remove some features)
