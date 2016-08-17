@@ -10,6 +10,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
 var _reactNative = require('react-native');
 
 var _reactNative2 = _interopRequireDefault(_reactNative);
@@ -281,13 +285,13 @@ var Swiper = function (_Component) {
       // By default, dots only show when `total` >= 2
       if (this.state.total <= 1) return null;
       var dots = [];
-      var ActiveDot = _reactNative2.default.createElement(_reactNative.View, { style: [styles.activeDot, this.props.activeDotStyle] });
-      var Dot = _reactNative2.default.createElement(_reactNative.View, { style: [styles.dot, this.props.dotStyle] });
+      var ActiveDot = _react2.default.createElement(_reactNative.View, { style: [styles.activeDot, this.props.activeDotStyle] });
+      var Dot = _react2.default.createElement(_reactNative.View, { style: [styles.dot, this.props.dotStyle] });
       for (var i = 0; i < this.state.total; i++) {
-        dots.push(i === this.state.index ? _reactNative2.default.cloneElement(ActiveDot, { key: i }) : _reactNative2.default.cloneElement(Dot, { key: i }));
+        dots.push(i === this.state.index ? _react2.default.cloneElement(ActiveDot, { key: i }) : _react2.default.cloneElement(Dot, { key: i }));
       }
 
-      return _reactNative2.default.createElement(
+      return _react2.default.createElement(
         _reactNative.View,
         {
           pointerEvents: 'none',
@@ -306,7 +310,7 @@ var Swiper = function (_Component) {
       var _this5 = this;
 
       if (_reactNative.Platform.OS === 'ios') {
-        return _reactNative2.default.createElement(
+        return _react2.default.createElement(
           _reactNative.ScrollView,
           _extends({
             ref: 'scrollView'
@@ -318,7 +322,7 @@ var Swiper = function (_Component) {
           pages
         );
       }
-      return _reactNative2.default.createElement(
+      return _react2.default.createElement(
         _reactNative.ViewPagerAndroid,
         {
           ref: 'scrollView',
@@ -379,14 +383,14 @@ var Swiper = function (_Component) {
             }
 
             pages = pages.map(function (page, i) {
-              return _reactNative2.default.createElement(
+              return _react2.default.createElement(
                 _reactNative.View,
                 { style: pageStyle, key: i },
                 children[page]
               );
             });
           } else {
-            pages = _reactNative2.default.createElement(
+            pages = _react2.default.createElement(
               _reactNative.View,
               { style: pageStyle },
               children
@@ -394,7 +398,7 @@ var Swiper = function (_Component) {
           }
 
           return {
-            v: _reactNative2.default.createElement(
+            v: _react2.default.createElement(
               _reactNative.View,
               { style: [styles.container, _this6.props.style],
                 onLayout: _this6._calContainer },
@@ -411,22 +415,22 @@ var Swiper = function (_Component) {
   }]);
 
   return Swiper;
-}(_reactNative.Component);
+}(_react.Component);
 
 Swiper.propTypes = {
-  horizontal: _reactNative2.default.PropTypes.bool,
+  horizontal: _react2.default.PropTypes.bool,
   style: _reactNative.View.propTypes.style,
   activeDotStyle: _reactNative.View.propTypes.style,
   dotStyle: _reactNative.View.propTypes.style,
   paginationStyle: _reactNative.View.propTypes.style,
-  showPagination: _reactNative2.default.PropTypes.bool,
-  loop: _reactNative2.default.PropTypes.bool,
-  autoplay: _reactNative2.default.PropTypes.bool,
-  autoplayTimeout: _reactNative2.default.PropTypes.number,
-  autoplayDirection: _reactNative2.default.PropTypes.bool,
-  defaultIndex: _reactNative2.default.PropTypes.number,
-  whRatio: _reactNative2.default.PropTypes.number,
-  renderPagination: _reactNative2.default.PropTypes.func
+  showPagination: _react2.default.PropTypes.bool,
+  loop: _react2.default.PropTypes.bool,
+  autoplay: _react2.default.PropTypes.bool,
+  autoplayTimeout: _react2.default.PropTypes.number,
+  autoplayDirection: _react2.default.PropTypes.bool,
+  defaultIndex: _react2.default.PropTypes.number,
+  whRatio: _react2.default.PropTypes.number,
+  renderPagination: _react2.default.PropTypes.func
 };
 Swiper.defaultProps = {
   horizontal: true,
